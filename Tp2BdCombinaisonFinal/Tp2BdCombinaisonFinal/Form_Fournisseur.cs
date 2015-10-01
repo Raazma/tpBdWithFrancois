@@ -14,33 +14,19 @@ namespace Tp2BdCombinaisonFinal
     public partial class Form_Fournisseur : Form
     {
         SqlConnection connexion;
-        public Form_Fournisseur()
+        public Form_Fournisseur(SqlConnection connexion)
         {
             InitializeComponent();
+            this.connexion = connexion;
         }
 
         private void Form_Fournisseur_Load(object sender, EventArgs e)
         {
-            ConnecterBD();
+          
             UpdateControls();
         }
 
-        private void ConnecterBD()
-        {
-
-            String connexionChaine;
-            connexionChaine = "Data Source=p104-11\\SQLEXPRESS2012;Initial Catalog=bdOperation;User ID=conOperation;Password=conOperation";
-            connexion = new SqlConnection(connexionChaine);
-            try
-            {
-                connexion.Open();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+       
 
         private void FermerBD()
         {
@@ -56,8 +42,7 @@ namespace Tp2BdCombinaisonFinal
         }
 
         private void Btn_Cancel_Click(object sender, EventArgs e)
-        {
-            FermerBD();
+        {         
             this.Close();
         }
 

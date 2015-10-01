@@ -15,37 +15,20 @@ namespace Tp2BdCombinaisonFinal
     {
          SqlConnection connexion;
 
-        public RechercheInventaire()
+        public RechercheInventaire(SqlConnection connexion)
         {
             InitializeComponent();
+            this.connexion = connexion;
         }
 
         private void RechercheInventaire_Load(object sender, EventArgs e)
         {
-            ConnecterBD();
+           
             UpdateControls();
         }
 
-        private void RechercheInventaire_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            FermerBD();
-        }
-
-        private void ConnecterBD()
-        {
-            String connexionChaine;
-            connexionChaine = "Data Source=p104-11\\SQLEXPRESS2012;Initial Catalog=bdOperation;User ID=conOperation;Password=conOperation";
-            connexion = new SqlConnection(connexionChaine);
-            try
-            {
-                connexion.Open();
-                MessageBox.Show("Connexion ouverte ! ");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
+       
 
         private void FermerBD()
         {

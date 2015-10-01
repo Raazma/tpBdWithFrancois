@@ -137,7 +137,6 @@
             this.Controls.Add(this.TB_Recherche);
             this.Name = "RechercheInventaire";
             this.Text = "Gestion de l\'inventaire";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RechercheInventaire_FormClosing);
             this.Load += new System.EventHandler(this.RechercheInventaire_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Inventaire)).EndInit();
             this.ResumeLayout(false);
